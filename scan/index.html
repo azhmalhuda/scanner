@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Scanner</title>
+  </head>
+  <body class="badan">
+    <div class="container">
+      <div class="content">
+        <div class="camera">
+          <video id="video" playsinline></video>
+        </div>
+        <div class="text">
+          <div class="title">
+            <h1>Scan QR Anda Disini</h1>
+            <h6 style="color: #ffffff; margin-top: 20px;">
+              SPONSORED BY 11 PG
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const video = document.getElementById('video');
+
+      // Mengaktifkan akses kamera pengguna
+      navigator.mediaDevices
+        .getUserMedia({ video: { facingMode: 'environment' } })
+        .then((stream) => {
+          video.srcObject = stream;
+          video.onloadedmetadata = () => {
+            video.play();
+            scanQRCode();
+          };
+        })
+        .catch((err) => {
+          console.error('Error accessing camera:', err);
+        });
+
+      // Memindai QR code
+      function scanQRCode() {
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+
+        setInterval(() => {
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+          const imageData = context.getImageData(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+          );
+          const code = jsQR(imageData.data, imageData.width, imageData.height);
+          if (code) {
+            // Lakukan sesuatu dengan data QR code yang terdeteksi
+            var data = new Date();
+            var tanggal = data.getDate()
+            var kode = code.data;
+            alert('QR Code detected '+kode+ ' '+tanggal);
+            if (tanggal == 20 && kode == "Pglrn1"){
+              window.location.href = "acc/";
+            }else if(tanggal == 21 && kode == "Pglrn2"){
+              window.location.href = "acc/";
+            }else if(tanggal == 22 && kode == "Pglrn3"){
+              window.location.href = "acc/";
+            }else if(tanggal == 23 && kode == "Pglrn4"){
+              window.location.href = "acc/";
+            }else{
+              window.location.href = "reject/";
+            }
+          }
+        }, 100);
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+  </body>
+</html>
