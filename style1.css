@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'MemphisRiver';
+  src: url(fonts/MemphisRiver.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roblox';
+  src: url(fonts/Roblox-Font-Regular.ttf) format('truetype');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Roblox';
+  src: url(fonts/Roblox-Font-Bold.ttf) format('truetype');
+  font-weight: bold;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  background-color: #eee;
+  background-image: url('img/bg.webp');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+i {
+  font-size: 7.5em;
+  color: #ca0e0e;
+  border: 5px solid transparent;
+  outline: 3px solid #ca0e0e;
+  border-radius: 50%;
+  position: relative;
+  align-items: center;
+}
+.myDiv {
+  text-align: center;
+  margin-top: 20px;
+}
+.section-card {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 48px;
+  width: 80%;
+  margin: 60px auto;
+}
+
+.card {
+  background-color: #ffc800;
+  box-shadow: 0 50px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+}
+
+.card__details {
+  padding: 10px 0;
+}
+
+.card__details ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px 0;
+}
+
+.card__details ul li {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  padding: 12px 0;
+}
+.card__details p {
+  width: 100%;
+  text-align: center;
+  font-size: 3em;
+  padding: 10px 10;
+  margin: 15px 0;
+  font-family: 'sans-serif';
+  font-weight: bold;
+}
+
+button {
+  appearance: none;
+  text-align: center;
+  background-color: #ff0000;
+  color: #ffc800;
+  border: none;
+  padding: 15px 30px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 500px;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}

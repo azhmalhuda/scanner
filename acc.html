@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NextJS Conf Card</title>
+    <link rel="stylesheet" href="style3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+        <div class="ticket-visual_visual" id="ticket">
+            <!-- <div class="left"></div> -->
+            <div class="right"></div>
+            <div class="ticket-visual-wrapper">
+              <div class="ticket-visual_profile">
+                <div class="ticket-profile_profile">
+                  <img
+                    src="img/smea.jpg"
+                    alt="madflows"
+                    class="ticket-profile_image"
+                  />
+                  <div class="ticket-profile_text">
+                    <p class="ticket-profile_name">PAGELARAN</p>
+                    <p class="ticket-profile_username">
+                      <span class="ticket-profile_githubIcon">
+                        <img src="img/lokasi.png" alt="" />
+                      </span>
+                      SMKN 2 PEKALONGAN
+                    </p>
+                    <!-- Refactored html -->
+                  </div>
+                </div>
+                <div class="ticket-event">
+                  <!-- <img src="./event-logos.png" /> -->
+                  <p class="ticket-date" id="tanggal">Tanggal: &nbsp; Senin, 20 Mei 2024</p>
+                  <p class="ticket-date" id="kelas">Kelas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp; XI&nbsp; MPLB1 A|B, &nbsp; XI &nbsp;PSPT A|B,&nbsp XI &nbsp;MPLB2 A|B</p>
+                  <p class="ticket-date">Tempat : &nbsp;Aula SMKN 2 PEKALONGAN</p>
+                </div>
+                <div class="ticket-visual_ticket-number-wrapper">
+                  <div class="ticket-visual_ticket-number"></div>
+                </div>
+                <div class="tulisan">
+                  <div class="isi">Day1</div>
+                </div>
+              </div>
+          </div>
+
+    </div>
+
+
+
+    <script>
+
+      var kelas = document.getElementById("kelas");
+      var kelas1 = "11 BR1 B, 11 BD B, 11 AKL3 B, 11 BR2 B, 11 TKJ1 B, 11 TKJ2 B";
+      var kelas2 = "11 MPLB1 A, 11 MPLB1 B, 11 PSPT A, 11 PSPT B, 11 MPLB2 A, 11 MPLB2 B";
+      var kelas3 = "11 AKL1 A, 11 AKL2 A, 11 PPLG A, 11 BR1 A, 11 BD A, 11 TKJ1 A";
+      var kelas4 = "11 AKL3 A, 11 BR2 A, 11 TKJ2 A, 11 AKL1 B, 11 AKL2 B, 11 PPLG B";
+
+      var namahari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+      var data = new Date();
+      var tanggal = document.getElementById("tanggal");
+      tanggal.innerHTML = namahari[data.getDay()] + ", " + data.getDate() + " April " + data.getFullYear();
+
+      if(data.getDate() == 20){
+        kelas.innerHTML = kelas1;
+      } else if(data.getDate() == 21){
+        kelas.innerHTML = kelas2;
+      } else if(data.getDate() == 22){
+        kelas.innerHTML = kelas3;
+      } else if(data.getDate() == 23){
+        kelas.innerHTML = kelas4;
+      }
+
+    </script>
+  </body>
+</html>
